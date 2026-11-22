@@ -1,0 +1,44 @@
+[
+  {
+    "file": "rct31-habitacle-arriere.webp",
+    "source": "910AD2AD-2853-4E16-A307-BBDE3843AA09.PNG",
+    "label": "Places arrière",
+    "width": 1199,
+    "height": 1312
+  },
+  {
+    "file": "rct31-exterieur-ville.webp",
+    "source": "4A4E0761-C67F-40AB-B9DB-71D5ED575955.PNG",
+    "label": "En ville",
+    "width": 1536,
+    "height": 1024
+  },
+  {
+    "file": "rct31-profil.webp",
+    "source": "1D251C24-C026-4601-85BB-856F9DBFBED1.PNG",
+    "label": "Vue de profil",
+    "width": 1774,
+    "height": 887
+  },
+  {
+    "file": "rct31-exterieur.webp",
+    "source": "67B43953-E90A-4D0E-A6F8-3570CB405712.PNG",
+    "label": "Vue extérieure",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "rct31-habitacle-avant.webp",
+    "source": "562B021A-D3A1-41D5-B4B3-9DF23422B788.PNG",
+    "label": "Habitacle avant",
+    "width": 1086,
+    "height": 1448
+  },
+  {
+    "file": "rct31-arriere.webp",
+    "source": "706A368C-8E07-4578-8513-74A7C6FD8869.PNG",
+    "label": "Vue arrière",
+    "width": 1199,
+    "height": 1312
+  }
+]
