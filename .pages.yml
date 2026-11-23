@@ -1,0 +1,81 @@
+media:
+  input: assets/blog
+  output: /assets/blog
+  extensions: [jpg, jpeg, png, webp]
+  rename: safe
+content:
+  - name: articles
+    label: Articles du blog
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{month}-{day}-{primary}.md"
+      field: false
+    subfolders: false
+    operations:
+      create: true
+      rename: false
+      delete: false
+    view:
+      primary: title
+      fields: [title, topic, published, date]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Titre de l’article
+        type: string
+        required: true
+      - name: description
+        label: Introduction et résumé Google
+        type: text
+        required: true
+        description: Une ou deux phrases pour présenter le sujet.
+      - name: topic
+        label: Catégorie
+        type: select
+        required: true
+        default: Conseils pratiques
+        options:
+          values: [Tourisme, Conseils pratiques, Vie professionnelle, Inspirations]
+      - name: label
+        label: Précision facultative
+        type: string
+        description: "Exemples : Toulouse, Tarbes ou 3 min de lecture."
+      - name: date
+        label: Date de l’article
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+        description: Utiliser aujourd’hui ou une date passée. Une date future ne programme pas une publication automatique.
+      - name: image
+        label: Photo de couverture
+        type: image
+        required: true
+      - name: image_alt
+        label: Description de la photo
+        type: string
+        required: true
+        description: Décrire brièvement ce que montre la photo pour les personnes utilisant un lecteur d’écran.
+      - name: image_credit
+        label: Crédit et licence de la photo
+        type: rich-text
+        description: Conserver les crédits des photos existantes. Ajouter l’auteur et la licence si nécessaire.
+        options:
+          format: markdown
+          media: false
+          switcher: false
+      - name: body
+        label: Contenu de l’article
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: false
+      - name: published
+        label: Publier sur le site
+        type: boolean
+        default: false
+        description: Désactivé = brouillon. Activé = article visible après enregistrement et mise à jour du site (quelques minutes).

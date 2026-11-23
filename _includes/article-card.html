@@ -1,0 +1,4 @@
+<a class="journal-card" data-category="{{ include.post.topic | escape }}" href=".{{ include.post.url }}">
+<img src=".{{ include.post.image | escape }}" alt="{{ include.post.image_alt | escape }}" loading="lazy" decoding="async">
+<div class="meta">{{ include.post.topic | escape }}{% if include.post.label != '' %} · {{ include.post.label | escape }}{% endif %}</div>
+<h3>{{ include.post.title | escape }}</h3><span class="text-link">Lire l’article</span></a>

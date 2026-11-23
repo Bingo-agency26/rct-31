@@ -1,19 +1,30 @@
 # RCT31 — Chauffeur privé
 
-Site statique autonome : accueil, services, véhicule, cinq articles, demande de trajet et rappel.
+Site GitHub Pages avec blog éditable dans Pages CMS. Les formulaires EmailJS restent indépendants du CMS.
 
-## Publication
-GitHub Pages : branche `main`, dossier racine `/`. Aucun build nécessaire. Les liens relatifs fonctionnent sous `/rct-31/`. Aucun domaine personnalisé n’est configuré avant l’achat du domaine.
+## Gestion éditoriale
+Connexion : https://app.pagescms.org — dépôt `Bingo-agency26/rct-31`, branche `main`.
+Voir [le guide du blog](GUIDE-BLOG.md).
+Configuration de l’éditeur : `.pages.yml`. Articles : `_posts/`. Photos réservées au blog : `assets/blog/`.
 
-## Formulaires EmailJS
-Configuration publique dans `assets/email-config.js`. Le code transmet les demandes à EmailJS et n’affiche le succès qu’après une réponse positive. En cas d’erreur, les données restent dans le formulaire. La disponibilité et le tarif doivent être confirmés par le chauffeur.
+## Publication automatique
+GitHub Pages doit rester configuré sur **Deploy from a branch**, branche `main`, dossier `/`.
+Chaque enregistrement du CMS crée un commit ; GitHub reconstruit et publie le site avec Jekyll.
+Ne pas réintroduire `.nojekyll` : les modèles du blog doivent être compilés.
+Les anciens articles gardent leur URL. `published: false` masque un article du site, mais pas du dépôt public.
+Les dates futures attendent un nouveau build après leur date : aucune programmation automatique n’est fournie.
 
-Variables communes envoyées : `request_type`, `customer_name`, `customer_phone`, `customer_email`, `service`, `departure`, `destination`, `date`, `time`, `passengers`, `luggage`, `notes`, `message`, `title`, `name`, `from_name`, `email`, `reply_to`, `phone`. Le rappel ajoute `preferred_time`. Le champ `message` contient le récapitulatif complet.
+## Développement
+Installer Ruby et Bundler, puis `bundle install` et `bundle exec jekyll serve`.
+Ouvrir http://localhost:4000/rct-31/ .
+`bundle exec jekyll build` génère `_site/`, qui contient le site statique prêt à héberger.
+Pour un futur domaine personnalisé, régler `url` et `baseurl` dans `_config.yml` en plus de la configuration GitHub Pages et du DNS.
 
-Ne jamais ajouter de clé privée EmailJS au dépôt. Le destinataire doit rester défini dans le modèle EmailJS, pas dans les champs visiteurs. Pour un nouveau domaine, vérifier les origines autorisées dans EmailJS.
+## Accès client
+Installer l’application GitHub Pages CMS uniquement sur ce dépôt. Inviter le client depuis Pages CMS après confirmation de son adresse e-mail. Ne jamais partager le compte GitHub administrateur. Les collaborateurs éditent le contenu et les médias, pas la configuration.
 
-## Aperçu local
-`python3 -m http.server 8000`, puis ouvrir `http://localhost:8000`.
+## EmailJS
+Configuration publique : `assets/email-config.js`. Ne jamais ajouter de clé privée. Le destinataire reste configuré dans EmailJS. Vérifier les origines autorisées lors d’un changement de domaine. Le chauffeur confirme la disponibilité et le tarif.
 
 ## Ressources
-Les images, polices et licences sont incluses. Voir `CREDITS.md`. Les mentions de médiation et la politique de conservation sont à finaliser par l’entreprise.
+Images, polices et licences incluses. Voir `CREDITS.md`. Conserver les crédits des photos touristiques dans les articles. Les mentions de médiation et la politique de conservation restent à finaliser par l’entreprise.

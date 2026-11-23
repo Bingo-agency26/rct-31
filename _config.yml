@@ -1,0 +1,26 @@
+title: RCT31 - Chauffeur privé
+url: https://bingo-agency26.github.io
+baseurl: /rct-31
+permalink: /:title.html
+timezone: Europe/Paris
+markdown: kramdown
+kramdown:
+  input: Kramdown
+  auto_ids: true
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      published: false
+exclude:
+  - README.md
+  - GUIDE-BLOG.md
+  - CREDITS.md
+  - Gemfile
+  - Gemfile.lock
+  - tests
+  - vendor
+  - .bundle
+  - .pages.yml
