@@ -3,13 +3,11 @@ title: Bien préparer son départ à l’aéroport
 description: Un départ serein commence bien avant le terminal.
 topic: Conseils pratiques
 label: 3 min de lecture
-date: '2026-11-20'
-published: true
+date: 2026-11-20
 image: /assets/blog/rct31-exterieur-ville.webp
 image_alt: Mercedes EQB 250+ en ville
-image_credit: ''
+published: true
 ---
-
 ## Anticiper les étapes du voyage
 
 Rassemblez votre heure de vol, votre terminal et les recommandations de votre compagnie. Prévoyez du temps pour le trajet, le dépôt des bagages et les contrôles, en tenant compte des conditions de circulation.
