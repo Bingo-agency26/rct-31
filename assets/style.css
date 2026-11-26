@@ -17,3 +17,8 @@
 
 /* Footer credit stays readable on intermediate screens. */
 .footer-bottom{flex-wrap:wrap}.footer-bottom a{text-decoration:underline;text-underline-offset:3px}
+
+.driver-intro{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center;padding-top:60px}.driver-intro h1{font-size:clamp(2.8rem,4.8vw,5rem)}.driver-intro p{max-width:580px;margin-top:24px;color:var(--muted)}.driver-intro img{width:100%;height:auto;border-radius:16px}.driver-intro figcaption{font-size:.875rem;color:var(--muted);margin-top:16px}.driver-story{max-width:1000px;margin:auto;padding-top:35px}.driver-story p{margin-top:24px}.driver-story .text-link{margin-top:25px}@media(max-width:850px){.driver-intro{grid-template-columns:1fr;gap:35px}}
+
+/* Collapse the navigation before its labels become cramped on tablets. */
+@media(min-width:701px) and (max-width:1000px){header{height:80px;padding:14px 6%;gap:15px}.menu-toggle{display:flex;align-items:center;gap:12px;background:none;border:1px solid #cad3bd;border-radius:30px;padding:10px 17px;color:var(--ink);font-size:.875rem}header nav{display:none;position:absolute;top:80px;left:0;right:0;padding:18px 6% 28px;background:var(--paper);box-shadow:0 12px 20px #20292314;flex-direction:column;align-items:stretch;gap:3px}header nav.is-open{display:flex}header nav a:not(.btn){padding:12px 0}.nav-call{display:block}nav .active{box-shadow:none;font-weight:700}}

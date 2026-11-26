@@ -6,7 +6,7 @@
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&toggle?.getAttribute('aria-expanded')==='true'){closeMenu();toggle.focus()}});
  document.addEventListener('click',e=>{if(!e.target.closest('header'))closeMenu()});
  nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
- const desktop=matchMedia('(min-width:701px)');desktop.addEventListener('change',closeMenu);
+ const desktop=matchMedia('(min-width:1001px)');desktop.addEventListener('change',closeMenu);
  // Animations never hide content before JavaScript loads; reduced motion is respected.
  const animate=(el,frames,options)=>{if(!reduced.matches&&el.animate)return el.animate(frames,options)};
  document.querySelectorAll('.intro-copy>.eyebrow,.intro-copy>h1,.intro-copy>p,.intro-copy>.contact-actions,.hero-visual').forEach((el,i)=>animate(el,[{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,delay:i*70,easing:'cubic-bezier(.2,.7,.2,1)'}));
