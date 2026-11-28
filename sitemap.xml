@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ '/' | absolute_url | xml_escape }}</loc></url>
+  {% assign public_pages = 'services.html,rene.html,blog.html,contact.html,mentions.html' | split: ',' %}
+  {% for path in public_pages %}<url><loc>{{ path | absolute_url | xml_escape }}</loc></url>
+  {% endfor %}
+  {% for post in site.posts %}<url><loc>{{ post.url | absolute_url | xml_escape }}</loc></url>
+  {% endfor %}
+</urlset>
